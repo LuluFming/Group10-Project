@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css')}}"/>
+{% endblock %}
+{% block js1%}
+<script src="{{ url_for('static', filename='js/about.js')}}"></script>
+{% endblock %}
+{% block title %}
+About Us
+{% endblock %}
+{% block menu %}
+<li><a href="{{url_for('contactus')}}">Contact Us</a></li>    
+{% endblock %}
+{% block content %}
+ <!-- MAIN PAGE SECTION--> 
+ <div class="about-banner-img">
+  <div class="about-banner">
+    <h1>WHAT WE DO</h1>
+    <h3>We put our expertise and skills to to help you achieve the results you want to see</h3>
+  </div>
+</div>
+
+<div class="main stats">
+  <h1>OUR STATS</h1>
+  <section class="container-about  container-stats">
+      <div class="card-stat">
+        <h2>
+          <div id="athletecounter" athlete-target="300" athlete-type="K">0</div>
+        </h2>
+        <p>ATHLETES</p> 
+      </div>
+      <div class="card-stat">
+        <h2>
+          <div id="sportscounter" sports-target="40" sports-type="+">0</div>
+        </h2> 
+        <p>SPORTS</p> 
+      </div>
+      <div class="card-stat">
+        <h2>
+          <div id="potentialcounter" potential-target="95" potential-type="%">0</div>   
+        </h2>
+          <p>IMPROVE POTENTIAL</p> 
+      </div>   
+  </section>
+</div>
+
+<div class="main team">
+    <h1> Meet the Leadership Team</h1>
+    <p> Our passion-filled team works together with professionalism and ambition - taking ownership of our work to deliver the best possible results.</p>
+    <div class="container-about">
+      <div class="member-card"> 
+          <div class="member"> 
+              <div class="member-front">
+                  <div class="member-img member1"></div>
+                  <div class="member-info">
+                      <h2>Lulu Fokming</h2>
+                      <span class="member-title"></span>Team Lead</span><br>
+                      <span class="member-more">Touch to view more</span>
+                  </div>
+              </div>
+              <div class="member-back">
+                  <div class="member-except">
+                    <p>
+                      Born and raised in South Africa and completed my Bachelor of Commerce, I set off to USA to participate in seeking out the millennium bug. I am a passionate Test Engineer with more than a decade of experience in Quality Assurance.  When not working, I enjoy travelling, baking and try very hard to be a hopeful gardener.
+                    </p> <br>
+                    <P>I am given the joy of show casing our team and our values in the About us page. I additionally designed the services page, footer and provide GIT training. For assignment2,I added javascript on Services page for slides and About page for stats counter.
+                    </P>
+   
+                  </div>
+                  <a href="{{url_for('services')}}">My Contribution Page</a>
+              </div>
+          </div>
+      </div>
+      <div class="member-card">
+          <div class="member">
+              <div class="member-front">
+                  <div class="member-img member2"></div>
+                  <div class="member-info">
+                      <h2>Marjorie Gordon</h2>
+                      <span class="member-title"></span>Assistant Lead</span><br>
+                      <span class="member-more">Touch to view more</span>
+                  </div>
+              </div>
+              <div class="member-back">
+                  <div class="member-excerpt">
+                    <br>
+                      <p>One of my favorite quotes is:</p><br>
+                        
+                        <p>
+                          "Consumer data will be the biggest differentiator in the next two to three years. 
+                          Whoever unlocks the reams of data and uses it strategically will win."
+                          <br> -Angela Ahrendts
+                        </p>
+                      <br><br>
+                      <p>
+                        Unfortunately due to Covid, I had to drop the course.
+                      </p>
+                  </div>
+                  <a href="{{url_for('home')}}">My Contribution Page</a>
+              </div>
+          </div>
+      </div>
+      <div class="member-card">
+          <div class="member">
+              <div class="member-front">
+                  <div class="member-img member3"></div>
+                  <div class="member-info">
+                      <h2>Francisco Reyes</h2>
+                      <span class="member-title"></span>Member - Stylist & Landing Officer</span><br>
+                      <span class="member-more">Touch to view more</span>
+                  </div>
+              </div>
+              <div class="member-back">
+                  <div class="member-except">
+                      <p>
+                        I live in Chile and hold a Business administrator, MBA. As a finance professional, I consult and teach organizations on cash flow and corporate finance.  My greatest joy is to spend time with my 2 children. I experience life through the eyes of another in my passion for reading.
+                      </p><br>
+                      <p>
+                        I worked on the creation of the home page in assignment1. For Assignment2, I create the page with Chart.js which, in addition to the graph, includes a button that allows you to take the page to darkmode.
+                      </p>
+                  </div>
+                  <a href="{{url_for('chart')}}">My Contribution Page</a>
+              </div>
+          </div>
+      </div>
+      <div class="member-card">
+        <div class="member">
+            <div class="member-front">
+                <div class="member-img member4"></div>
+                <div class="member-info">
+                    <h2>Anri Ferris</h2>
+                    <span class="member-title">Member - Relations Manager</span><br>
+                    <span class="member-more">Touch to view more</span>
+                </div>
+            </div>
+            <div class="member-back">
+                <div class="member-except">
+                    <p>
+                      Hello! I was born and raised in Japan. When I was 17 years old, I came to the United States for a tennis scholarship in St. Petersburg College. Completed Bachelor degree in Mathematics. Currently, I live in GA where my work is. I am a Software Test Engineer at Panasonic Automotive, where I evaluate In-vehicle infotainment system that is developed in Japan. I enjoy playing tennis and pickleball on weekends.
+                    </p><br>
+                    <p>
+                      For this assignment 1 project, I design the "contact us" page <br>
+                      For assignment 2, I worked on the contact form using JavaScript. The code allows a user to send E-mails from website to the account I created.
+                    </p>
+                </div>
+                <a href="{{url_for('contactus')}}">My Contribution Page</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="values">
+      <div class="values-inner">
+        <img src="{{url_for('static', filename='img/About-OurValues.png')}}" alt="Our Cover values: Teamwork, Optimism, Adaptability">
+      </div>
+  </div>
+
+<div class="main about-press">
+  <h1>How We Do It!</h1>
+  <figure>
+    <a href="{{url_for('static', filename='files/Grp10-Assign1-MeetingNotes.pdf')}}" download>
+      <img src="{{url_for('static', filename='img/About-report.png')}}" alt="Download what we do">
+    </a>
+  </figure>
+
+  <Span>
+    <a href="{{url_for('static', filename='files/Grp10-Assign1-MeetingNotes.pdf')}}" download>Read it here</a>
+  </Span>
+</div>
+{% endblock %}

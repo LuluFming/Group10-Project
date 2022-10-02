@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/services.css')}}"/>
+{% endblock %}
+{% block js1%}
+{% endblock %}
+{% block title %}
+Services
+{% endblock %}
+{% block menu %}
+<li><a href="{{url_for('chart')}}">Demo Chart</a></li>    
+{% endblock %}
+{% block content %}
+<section>
+  <div class="service-header">
+    <p>Services</p>
+    <h2>Powering Performance Using Science</h2>
+  </div>
+
+  <div class="service-slide-container"> 
+    <div class="service-slide  fade">
+      <div class="service-container">
+        <div class="service-container-inner">
+          <h3>PEAK PERFORMANCE</h3>
+            <p>Our wearable sensors capture positional and biometric data to help eliminate inefficeincies in movement, detect injury risk and detemine which training methods yield the best results.</p>
+        </div>
+
+        <div class="service-img">
+          <div class="service-img-inner"> 
+              <img src="{{url_for('static', filename='img/service1.jpeg')}}" alt="PEAK PERFORMANCE: Wearable Sensors"/>   
+          </div>
+        </div>
+      </div>
+    </div>   
+
+    <div class="service-slide fade">
+      <div class="service-container">
+        <div class="service-container-inner">
+          <h3>VISUALIZE THE WIN</h3>
+         <p>
+          Our interactive visualization tools gives insights to improve outcomes. <br>
+          Collaborate with our expert team to get spatio-temporal insights and precise quantification and assessment of self and opponents abilities. <br>
+          <a href="https://liverpoolfcanalysis.com/football-manager-2023/football-manager-2023-saves/football-manager-2023-replacing-sadio-mane-at-liverpool">
+            <span> image source from liverpoolfcanalysis.com</span>
+          </a>  
+         </p>
+        </div>
+
+        <div class="service-img">
+          <div class="service-img-inner">
+              <img src="{{url_for('static', filename='img/service2.jpeg')}}" alt="VISUALIZE THE WIN: Visualization tools"/>  
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="service-slide fade">
+      <div class="service-container">
+        <div class="service-container-inner">
+          <h3>GAME PLAN</h3>
+          <p>Our advance enterprise solution provides query, filter and visualization for play-by-play information.  Our rule-based annotation framework coupled with the drag and snap capability provides meaningful analysis that can focus on the behavior of athletes, coaches, and referees.</p>
+        </div>
+
+        <div class="service-img">
+          <div class="service-img-inner">
+              <img src="{{url_for('static', filename='img/service3.jpeg')}}" alt="GAME PLAN: Solutions and Frameworks"/>    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-slide fade">
+      <div class="service-container">
+        <div class="service-container-inner">
+          <h3>QUEST FOR SECRET SUCCESS</h3>
+          <p>Our Predictive models uncovers trends in opponents and performances in individual games or entire tournaments</p>
+        </div>
+
+        <div class="service-img">
+          <div class="service-img-inner">
+              <img src="{{url_for('static', filename='img/service4.jpeg')}}" alt="QUEST FOR SECRET SUCCESS: Predictive Modeling"/>    
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div>  
+
+    <a class="prev" onclick="plusSlides(-1)"><</a>
+    <a class="next" onclick="plusSlides(1)">></a>
+  </div>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+  </div>
+
+</section>
+
+<div class="Service-Contact">
+<h1>Let's Get Started!</h1>
+<h2> Contact us for a free demostration.</h2> 
+<a href="{{url_for('contactus')}}" class="service-button animate">Contact us</a>
+</div>
+{% endblock %}
+{% block js2 %}
+<script src="{{ url_for('static', filename='js/service.js')}}"></script>
+{% endblock %}

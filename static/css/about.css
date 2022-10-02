@@ -1,0 +1,257 @@
+/*
+  GROUP: Lulu Fokming, Francisco Reyes, Anri Ferris
+  Author: Lulu Fokming
+  DATE 9/25/2022  
+  DESCRIPTION: This is ISM6225.360F22  Assignment1
+*/
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.about-banner-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../img/About-Banner.jpg);
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;  
+}
+.about-banner {
+  text-align: center;
+  height: auto;
+  padding-bottom: 0.5%;
+  margin-top: -1px;
+  top: 50%;
+  left: 50%;
+}
+
+.about-banner h1{
+color: aliceblue;
+  padding-top: 35px;
+  font-size: 5em;
+}
+.about-banner h3{
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+
+.card-stat {
+  padding-top: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 1% 2% 1% 2%;
+  perspective: 800px;
+  width: auto;
+  height: 250px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.main {
+  text-align: center;
+}
+.main h1{
+  padding-top: 2%;
+  font-size: 2.5em;
+  color: teal;
+}
+
+.stats h2{
+  font-size: 3.5em;
+  color: darkblue;
+}
+
+.stats p{
+  font-size: 1.4em;
+  color: #444;
+  margin: 2% 2% 2% 2%;
+}
+
+.team p{service-right-img-inner
+  font-size: 1.4em;
+  color: #444;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.values-inner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.member-card {
+  min-width: 250px;
+  max-width: 380px;
+  height: 450px;
+  perspective: 1000px;
+  flex: 1;
+  margin: 0 15px 30px;
+}
+.member {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.member1 {
+  background-image: url('../img/LuluF.jpg');
+}
+.member2 {
+  background-image: url('../img/MKG.jpeg');
+}
+.member3 {
+  background-image: url('../img/FranciscoR.jpg');
+}
+.member4 {
+  background-image: url('../img/AnriF.png');
+}
+
+.member-front, .member-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.member-front {
+  background: linear-gradient(90deg,#80BD9E,#89DA59);
+}
+.member-back {
+  transform: rotateY(180deg);
+}
+.member-card:hover .member {
+  transform: rotateY(180deg);
+}
+.member-img {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.member-info {
+  padding: 20px 30px 30px;
+}
+.member-info title {
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.member-more {
+  font-size: 0.7rem;
+}
+
+.member-info h2{
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-top: 5px;
+}
+.member-back {
+  background-color: #F98866;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  align-items: flex-start;  
+  color: #071448;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.member-back p {
+  margin-top: 0.2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 0.9em;
+}
+
+.member-back ul {
+  margin-left: 10%;
+  font-size: 1em;
+}
+
+.member-back a{
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #5678ba;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.container-about {
+  max-width: 2400px;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-press {
+  margin-top: -10px;
+  height: 280px;
+  width: auto;
+  background-color: #F3F9FF;
+}
+
+.about-press img {
+  width:100px;
+  height: 100px;
+  opacity: 0.5;
+  display: block;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media only screen and (max-width: 768px) {  
+  .about-banner h1 {
+    font-size: 2.3em;
+  }
+  .about-banner h3 {
+    font-size: 0.8em;
+    margin-left: 3%;
+    margin-right: 3%;
+    line-height: 1.2;
+  }
+  .container-stats {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .card-stat {
+    width: 94.5%;
+    float: center;
+    margin: 3% 2% 4% 2%;
+  }
+
+  .member-back p {
+    font-size: 0.8em;
+  }
+  
+  .member-back ul {
+    font-size: 0.8em; 
+  }
+
+
+  .navbar a {
+    font-size: 80%;
+    }
+
+    .logoimg {
+      width:40px;
+       height:40px;       
+      }
+    
+}

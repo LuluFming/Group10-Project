@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+G10 Home Page
+{% endblock %}
+{% block menu %}
+<li><a href="{{url_for('contactus')}}">Contact Us</a></li>    
+{% endblock %}
+{% block content %}
+<section class="main-img">
+  <div class="main-container">
+    <div class="main-inner"  >
+      <div class="main-block">
+        <h4>ATHLETES NEED EVERY EDGE THEY CAN GET</h4>
+        <p>At G10 we help athletes, coaches and teams grow, maximize their potential, prevent sport injuries, give them an edge and reach their goals by giving them easy access to the right information.</p><br>
+        <div class="main-button-container">
+          <a class="main-button" href='html/contactus.html' target="_blank">Contact Us</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
