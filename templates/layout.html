@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!----
+  GROUP: Lulu Fokming, Francisco Reyes, Anri Ferris
+  Author: Francisco Reyes, Lulu Fokming
+  DATE 10/1/2022  
+  DESCRIPTION: This is ISM6225.360F22  Project
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
+  <link rel="icon" type="image/x-icon"   href="{{ url_for('static', filename='img/logo.ico')}}"/>
+  <title>{% block title %}{% endblock %}</title>
+  {% block css %}{% endblock %}
+  {% block js1 %}{% endblock %}
+</head>
+<body>
+  <!-- Navigation Bar-->
+  <div class = "navbar">
+    <div class = "nav-container">
+      <div class = "nav-items">
+        <a href="{{url_for('home')}}">
+          <img src="{{url_for('static', filename='img/logo.ico')}}" alt="G10 Data Service" class="logo-img">
+        </a>
+        <ul class = "nav-menu">
+            <li><a href="{{url_for('services')}}">Services</a></li>
+            <li><a href="{{url_for('about')}}">About Us</a></li>
+            {% block menu %}{% endblock %}       
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% block content %}
+  {% endblock %}
+  
+  <!-- Footer-->
+  <footer class="footer">
+    <div class="grid-3">
+      <div>
+        <span> &copy; 2022 All rights reserved!</span>
+      </div>
+
+      <div class="footer-company">
+         <a href="{{url_for('home')}}">
+            <img src="{{url_for('static', filename='img/logo.ico')}}" alt="G10 Data Labs" class="logo-img">
+         </a><br>
+          <h> G10 Data Labs</h3<br>
+          <p>Insights for measureable performance improvements.</p>
+      </div>
+
+      <div class="footer-menu">
+        <a href="{{url_for('home')}}">Home</a><br>
+        <a href="{{url_for('services')}}">Services</a><br>
+        <a href="{{url_for('about')}}">About Us</a><br>
+        <a href="{{url_for('contactus')}}">Contact Us</a> 
+      </div>
+    </div>
+  </footer>
+  <script {% block js2 %}{% endblock %}></script>
+</body>
+
+</html>

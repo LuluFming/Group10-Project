@@ -1,0 +1,306 @@
+/*
+  GROUP: Lulu Fokming, Francisco Reyes, Anri Ferris
+  Author: Francisco Reyes, Lulu Fokming
+  DATE 9/25/2022  
+  DESCRIPTION: This is ISM6225.360F22  Assignment1
+*/
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #071448;
+  width: 100%;
+  height: 100%;
+}
+
+/* G10 Logo */
+.logo-img {
+  height: 3rem;
+  width: 3rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(21, 144, 27, 0.511);
+  position  : relative;
+  width     : 100%;
+  height: 70px;
+}
+
+.nav-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-menu {
+  display        : flex;
+  justify-content: space-between;
+  list-style     : none;
+}
+
+
+.nav-items {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  height         : 70px;
+}
+
+
+.nav-menu a{
+  display        : block;
+  position       : relative;
+  padding        : 12px;
+  color          : white;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+.nav-menu a:hover {
+  border-bottom: 2px #fff solid;
+}
+
+
+/* Style the footer */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-3 span{
+  font-size: 0.7em;
+}
+
+.footer {
+  display:block;
+  background-color: rgba(32, 146, 100, 0.824);
+  padding: 10px;
+  color: #fff;
+}
+
+.footer a {
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  text-decoration: none; 
+  line-height: 1.8;
+}
+
+
+.footer-company {
+  text-align: center;
+  font-size: 0.5;
+  line-height: 1.6;
+}
+
+.footer-company p {
+  font-size: 0.7em;
+}
+
+ .footer-menu {
+  text-align: center;
+  line-height: 1.9;
+}
+
+.footer-menu a:hover {
+  border-bottom: 1.5px #fff solid;
+}
+
+
+
+.main-img {
+  background-image: url(../img/HomeAthelete.png);
+  height: 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-container {
+  position: relative;
+  display: flex;
+}
+
+.main-inner {
+  background-color: white; 
+  height: 700px; 
+}
+
+.main-block {
+    position: absolute;
+    top: 12%;
+    left: 3%;
+    color: white;
+    padding-left: 18px;
+    padding-right: 18px;
+    background: #1488cc;
+    background: linear-gradient(to right, #333ac1, #1488cc);
+    margin-right: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.main-block h4{
+  font-size: 1.8rem;
+}
+
+.main-block p{
+  font-size: 1.4rem;
+}
+
+.main-button {
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 1px 10px 2rem rgba(255, 94, 98, 0.5);
+    transition: all 0.2s ease-in;
+    text-decoration: none;  
+    position: absolute; 
+    left: 3%;
+}
+
+.main-button-container {
+  padding: 3rem 2rem 3rem 3rem;
+}
+  
+.main-button:hover {
+    box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+} 
+
+
+/*--quote--*/
+
+.quote-block {
+  background-color:hsl(180, 20%, 90%);
+  height: 550px;
+  background-size: cover;
+  text-align: center;
+  }
+
+.quote-block h1 {
+  font-weight: 900;
+  font-size: 60px;
+  color:#1488cc;
+  margin: 0px;
+}
+
+.quote-block blockquote{
+  font-size: larger;
+  color: #404040;
+}
+
+.quote-block author {
+  font-size: large;
+  color: black
+}
+
+.quote-block span {
+ font-size: small;
+ color: #767676;
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+  .main-img {
+    background-image: url(../img/HomeAthlete2.jpg);
+    width: 100%;
+    height: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  .main-block h4{
+    display: block;
+    font-size: 90%;
+  }
+  .main-block p{
+    display: block;
+    font-size: 90%;
+  }
+  .main-button {
+    padding: 0.8rem 1.6rem;
+    border-radius: 15px;
+    font-size: 0.6rem;
+}
+
+}
+
+
+@media screen and (max-width: 650px) {
+
+  .navbar a {
+    font-size: 50%;
+    }
+
+  .logoimg {
+      width:30%;
+       height:30%;
+   }
+
+  .main-img {
+    background-image: url(../img/HomeAthlete3.jpg);
+    width: 100%;
+    height: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  .main-block h4{
+    display: block;
+    font-size: 50%;
+  }
+  .main-block p{
+    display: block;
+    font-size: 50%;
+  }
+
+  .main-button {
+    padding: 0.8rem 1.6rem;
+    border-radius: 15px;
+    font-size: 0.6rem;
+}
+
+.quote-block {
+  height: 100%;
+  }
+
+.quote-block h1 {
+  font-size: 80%;
+}
+
+.quote-block blockquote{
+  font-size: 80%;
+}
+
+.quote-block author {
+  font-size: 80%;
+}
+
+.quote-block span {
+  font-size: 80%;
+}
+
+
+.grid-3 span{
+  font-size: 40%;
+}
+
+.footer-company p{
+  font-size: 40%;
+}
+
+.footer-menu a{
+  font-size: 60%;
+}
+.footer-company h{
+  font-size: 70%;
+}
+
+}
