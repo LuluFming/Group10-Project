@@ -1,14 +1,80 @@
 {% extends "layout.html" %}
 {% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contactus.css')}}"/>
 {% endblock %}
-{% block js top %}
+{% block js1%}
+<script src="{{ url_for('static', filename='js/contactus.js')}}"></script>
 {% endblock %}
 {% block title %}
-
+Contact Us
 {% endblock %}
 {% block menu %}
+<li><a href="{{url_for('about')}}">About</a></li>    
 {% endblock %}
 {% block content %}
-{% endblock %}
-{% block js bottom %}
+<!-- Contact US page -->
+  <!-- header -->
+  <div class="banner">
+    <div class="headerimg">
+          <div class="header"><h2 id="contactus">Contact Us</h2>
+          </div>
+    </div>
+  </div>
+    <br>
+
+  <div class="subheader"><h3>Get in touch and find out how we can help you</h3></div>
+  
+
+  <!--contact info-->
+    <div class="grid-container">
+      <div class="box">
+        <img src="{{url_for('static', filename='img/email.png')}}" height="40" width="40">
+        <h5>EMAIL</h5>
+        <p>help@usf.edu</p>
+      </div>
+        <div class="box">
+          <img src="{{url_for('static', filename='img/address.png')}}" height="40" width="40">
+          <h5>ADDRESS</h5>
+          <p>4202 E. Fowler Avenue<br>
+            Tampa, FL 33620</p>
+        </div>
+          <div class="box">
+            <img src="{{url_for('static', filename='img/phone.png')}}" height="40" width="40">
+            <h5>PHONE</h5>
+            <p>813-974-1222</p>
+          </div>
+      </div>
+    
+      <div class="message">
+        <div class="subheader"><h3>OR<br>Drop us a message!</h3></div>
+        <div class="emaildiv">
+          <form method="post" id="form">
+            <label for="name">Full Name:</label><br>
+              <input id="name" required type="text" name="name" size="35">
+          <br>
+            <label for="email">Email:</lable><br>
+              <input id="email" required type="text" id="email" name="email" size="35">
+          <br>
+            <label for="message">Message:</label><br>
+              <textarea name="message" required id="message" cols="30" rows="10"></textarea>
+            </label>
+          <br>
+              <input type="button" value="Send Mail" onclick="sendMail();ClearInputFields();" />
+          </form>
+         </div>
+      </div>
+      <br> 
+
+      <div class="subheader">
+        <h3>Our Office</h3>
+      </div>
+
+      <div class="map">
+        <div class="mapbox">
+         <iframe class="map-responsive" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14083.518076215838!2d-82.4138539!3d28.  0587031!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb1f4741e5c51906a!2sUniversity%20of%20South%20Florida!5e0!3m2!1sen!2sus!4v1663435612247!5m2!1sen!2sus" width:"650" height:"450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+  <br>
 {% endblock %}
