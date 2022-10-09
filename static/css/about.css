@@ -71,7 +71,7 @@ color: aliceblue;
   margin: 2% 2% 2% 2%;
 }
 
-.team p{service-right-img-inner
+.team p{
   font-size: 1.4em;
   color: #444;
   margin-left: 20%;
@@ -203,6 +203,7 @@ color: aliceblue;
   height: 280px;
   width: auto;
   background-color: #F3F9FF;
+
 }
 
 .about-press img {
@@ -213,6 +214,9 @@ color: aliceblue;
   margin-top: 1%;
   margin-left: auto;
   margin-right: auto;
+}
+.about-press-read{
+  color: blue;
 }
 
 

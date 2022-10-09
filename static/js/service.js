@@ -60,7 +60,7 @@ function autoSlides() {
   service_slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 
-  /* set the time so, the slides auto changes every 12 seconds*/
-  setTimeout(autoSlides, 12000);  
+  /* set the time so, the slides auto changes every 3 seconds*/
+  setTimeout(autoSlides, 3000);  
    
 }

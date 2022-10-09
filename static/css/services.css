@@ -8,6 +8,7 @@
 * {
   box-sizing: border-box;
 }
+
 /* Header*/
 .service-header{
   text-align: center;
@@ -189,7 +190,7 @@
     height: 90%;
   }
   .Service-Contact {
-    height: 90%
+    height: 90%;
     font-size: 60%;
   }
   

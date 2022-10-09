@@ -1,14 +1,42 @@
 {% extends "layout.html" %}
 {% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chart.css')}}"/>  
 {% endblock %}
-{% block js top %}
+{% block js1 %}
+<script src="{{ url_for('static', filename='js/chart.js')}}"></script>
 {% endblock %}
-{% block title %}
 
+{% block title %}
+Chart
 {% endblock %}
+{% block menuhome %}
+<a href="{{url_for('home')}}" class="nav-link1">HOME</a>
+{% endblock %} 
 {% block menu %}
 {% endblock %}
+
 {% block content %}
+
+<body id="pagina_chart">
+    
+  
+    <section class="container">
+      <div style="text-align:right;">
+        <button class="btn-darkmode" onclick="darkmode()">Press to darkmode</button>
+      </div>
+      <h1>Forbes list of the world's highest-paid athletes</h1>
+      <h3>From Wikipedia, the free encyclopedia</h3>
+      <h3>Year 2022</h3>
+      <h3>USD Millions</h3>
+      <canvas id="myChart" style="width:auto;max-width:auto; margin-top:40px;"></canvas>
+  
+    </section> <!-- chart -->
+  
+
+
 {% endblock %}
-{% block js bottom %}
-{% endblock %}
+
+
+{% block js2 %}
+<script src="{{ url_for('static', filename='js/chart.js')}}"></script>
+{% endblock %} 

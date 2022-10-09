@@ -1,0 +1,88 @@
+.comparisontable {
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  .comparisontable th {
+    text-align: center;
+    padding: 16px;
+  }
+
+  .comparisontable tr {
+    text-align: center;
+    padding: 16px;
+  }
+
+  .tablecontainer{
+    overflow-x: auto;
+  }
+
+  .playerselection{
+    display: flex;
+    margin-left: 30px;
+  }
+  .account{
+    margin-left: 30px;
+  }
+  .account-heading{
+    color: teal;
+    text-align: center;
+  }
+
+  .playercontainer {
+    margin-left: 30px;
+  }
+  .stats-container{
+    background-color: red;
+  }
+  .stats-container h3{
+    margin-top: 5px;
+    margin-left: 30px;
+  }
+  .stats {
+    min-width: 320px;
+    height: 127px;
+    background-color:white;
+    border: solid 1px white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .stats-cell {
+    flex-grow: 1;
+    flex-shrink: 0;
+    border: solid 1px white;
+    flex-basis: 30%;
+    padding-top: 20px;
+    text-align: center;
+  }
+  .stats-cell span{
+    font-size: 2.5em;
+    color: red;
+  }
+  .stats-cell h3{
+    padding-left: 0.1px;
+    font-size: 1em;
+    color: #444;
+  }
+  
+  
+  @media (min-width: 768px) {
+    .stats {
+      flex-wrap: no-wrap;
+    }
+    .stats-cell {
+      flex-basis: auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .stats {
+      height: auto;
+    }
+
+  }
