@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/account.css')}}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+{% block js1%}
+{% endblock %}
+{% block title %}
+Player Evaluation
+{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<br>
+<h2 class="account">Dashboard for {{accounttype}} :  {{session['user']}}</h2> <br>
+<h1 class="account-heading">Player comparison</h1> <br>
+<h5 class="playercontainer">The stats below allow you to compare how well players are performing head to head this season</h5>
+<p class="playercontainer">Select players for comparison:</p>
+<form class="playerselection" method = "post"   action="{{url_for('account')}}">
+    <input type="hidden" id="accounttype" name="accounttype" value={{accounttype}} >
+    <input type="hidden" id="team" name="team" value={{team}} >
+    <div class="row">
+            <div class="col">
+                <select class="form-select" id="player1" name="player1">
+                    <option id="Salah1">Salah</option>
+                    <option id="Ronaldo1">Ronaldo</option>
+                    <option id="Messi1">Messi</option>
+                    <option id="Neymar1">Neymar</option>
+                </select>
+            </div>
+            <div class="col">
+                <select class="form-select" id="player2" name="player2">
+                    <option id="Salah2">Salah</option>
+                    <option id="Ronaldo2">Ronaldo</option>
+                    <option id="Messi2">Messi</option>
+                    <option id="Neymar2">Neymar</option>
+                </select>
+            </div>
+            
+            <div class="col">
+                <button type="submit" class="btn btn-sm btn-success rounded-0 my-2" id="reload_data">Compare</button> 
+            </div>
+    </div>
+</form>            
+
+
+
+<div class="tablecontainer">
+    <table class="comparisontable">
+        <tr>
+        <th>{{player1['name']}}</th>
+        <th></th>
+        <th>{{player2['name']}}</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Assists</td>
+            <td></td>
+        </tr>
+        <tr>
+        <td>{{player1['assists']}}</td>
+        <td>
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width: {{(player1['assists']/(player1['assists']+player2['assists']) * 100)|round(2)}}%">
+                    {{(player1['assists']/(player1['assists']+player2['assists']) * 100)|round(2)}}%
+                </div>
+                <div class="progress-bar bg-danger" style="width:{{(player2['assists']/(player1['assists']+player2['assists']) * 100)|round(2)}}%">
+                    {{(player2['assists']/(player1['assists']+player2['assists']) * 100)|round(2)}}%
+                </div>
+            </div>
+        </td>
+        <td>{{player2['assists']}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><hr></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Shots on target</td>
+            <td></td>
+        </tr>
+
+        <tr>
+        <td>{{player1['shots on target']}}</td>
+        <td>
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width: {{player1['shots on target']/(player2['shots on target']+ player1['shots on target'])* 100}}% ">
+                    {{(player1['shots on target']/(player1['shots on target']+player2['shots on target']) * 100)|round(2)}}%
+                </div>
+                <div class="progress-bar bg-danger" style="width:{{player2['shots on target']/(player2['shots on target']+ player1['shots on target'])* 100}}%">
+                    {{(player2['shots on target']/(player1['shots on target']+player2['shots on target']) * 100)|round(2)}}%
+                </div>
+            </div>
+
+
+        </td>
+        <td>{{player2['shots on target']}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><hr></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Goals</td>
+            <td></td>
+        </tr>
+        <tr>
+        <td>{{player1['goals']}}</td>
+        <td>
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width:{{(player1['goals']/(player1['goals']+player2['goals']) * 100)|round(2)}}%">
+                    {{(player1['goals']/(player1['goals']+player2['goals']) * 100)|round(2)}}%
+                </div>
+                <div class="progress-bar bg-danger" style="width:{{(player2['goals']/(player1['goals']+player2['goals']) * 100)|round(2)}}%">
+                    {{(player2['goals']/(player1['goals']+player2['goals']) * 100)|round(2)}}%
+                </div>
+            </div>
+
+
+        </td>
+        <td>{{player2['goals']}}</td>
+        </tr>
+
+    </table>
+</div>  
+
+<br>
+<br>
+
+<div class="stats-container">
+    <h3>Team {{team}} Stats</h3>
+    <div class="stats">
+        <div class="stats-cell">
+          <span>38</span>
+          <h3>Games Played</h3>
+        </div> 
+        <div class="stats-cell">
+            <span>28</span>
+            <h3>Won</h3>
+        </div> 
+        <div class="stats-cell">
+            <span>8</span>
+            <h3>Drawn</h3>
+        </div> 
+        <div class="stats-cell">
+            <span>2</span>
+            <h3>Lost</h3>
+        </div> 
+        <div class="stats-cell">
+            <span>2</span>
+            <h3>Position</h3>
+        </div> 
+    </div>
+</div>
+
+
+{% endblock %}
+{% block js2%}
+<script>
+//set the default dropdowns
+//drop box1
+document.getElementById("{{player1['name']}}1").selected = true;
+//drop box2
+document.getElementById("{{player2['name']}}2").selected = true;
+</script>
+{% endblock %}

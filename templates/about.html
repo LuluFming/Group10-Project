@@ -8,8 +8,10 @@
 {% block title %}
 About Us
 {% endblock %}
-{% block menu %}
-<li><a href="{{url_for('contactus')}}">Contact Us</a></li>    
+{% block menuhome %}
+<a href="{{url_for('home')}}" class="nav-link1">HOME</a>
+{% endblock %} 
+{% block menu %}  
 {% endblock %}
 {% block content %}
  <!-- MAIN PAGE SECTION--> 
@@ -160,13 +162,13 @@ About Us
 <div class="main about-press">
   <h1>How We Do It!</h1>
   <figure>
-    <a href="{{url_for('static', filename='files/Grp10-Assign1-MeetingNotes.pdf')}}" download>
+    <a href="{{url_for('static', filename='files/Grp10-Assign1-MeetingNotes.pdf')}}">
       <img src="{{url_for('static', filename='img/About-report.png')}}" alt="Download what we do">
     </a>
   </figure>
 
-  <Span>
-    <a href="{{url_for('static', filename='files/Grp10-Assign1-MeetingNotes.pdf')}}" download>Read it here</a>
+  <Span >
+    <a class="about-press-read" href="{{url_for('static', filename='files/Grp10-Assign1-MeetingNotes.pdf')}}">Read it here</a>
   </Span>
 </div>
 {% endblock %}

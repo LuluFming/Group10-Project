@@ -7,8 +7,13 @@
 {% block title %}
 Services
 {% endblock %}
-{% block menu %}
-<li><a href="{{url_for('chart')}}">Demo Chart</a></li>    
+{% block menuhome %}
+<a href="{{url_for('home')}}" class="nav-link1">HOME</a>
+{% endblock %} 
+{% block menu %}  
+<li class="nav-item">
+  <a href="{{url_for('chart')}}" class="nav-link1">DEMO CHART</a>
+</li>
 {% endblock %}
 {% block content %}
 <section>
@@ -22,7 +27,7 @@ Services
       <div class="service-container">
         <div class="service-container-inner">
           <h3>PEAK PERFORMANCE</h3>
-            <p>Our wearable sensors capture positional and biometric data to help eliminate inefficeincies in movement, detect injury risk and detemine which training methods yield the best results.</p>
+            <p>Our wearable sensors capture positional and biometric data to help eliminate inefficiencies in movement, detect injury risk and determine which training methods yield the best results.</p>
         </div>
 
         <div class="service-img">
@@ -38,8 +43,8 @@ Services
         <div class="service-container-inner">
           <h3>VISUALIZE THE WIN</h3>
          <p>
-          Our interactive visualization tools gives insights to improve outcomes. <br>
-          Collaborate with our expert team to get spatio-temporal insights and precise quantification and assessment of self and opponents abilities. <br>
+          Our interactive visualization tools give insights to improve outcomes. <br>
+          Collaborate with our expert team to get spatio-temporal insights and precise quantification and assessment of self and opponent's abilities. <br>
           <a href="https://liverpoolfcanalysis.com/football-manager-2023/football-manager-2023-saves/football-manager-2023-replacing-sadio-mane-at-liverpool">
             <span> image source from liverpoolfcanalysis.com</span>
           </a>  
@@ -58,7 +63,7 @@ Services
       <div class="service-container">
         <div class="service-container-inner">
           <h3>GAME PLAN</h3>
-          <p>Our advance enterprise solution provides query, filter and visualization for play-by-play information.  Our rule-based annotation framework coupled with the drag and snap capability provides meaningful analysis that can focus on the behavior of athletes, coaches, and referees.</p>
+          <p>Our advanced enterprise solution provides query, filter, and visualization for play-by-play information. Our rule-based annotation framework coupled with the drag and snap capability provides meaningful analysis that can focus on the behavior of athletes, coaches, and referees.</p>
         </div>
 
         <div class="service-img">
@@ -73,7 +78,7 @@ Services
       <div class="service-container">
         <div class="service-container-inner">
           <h3>QUEST FOR SECRET SUCCESS</h3>
-          <p>Our Predictive models uncovers trends in opponents and performances in individual games or entire tournaments</p>
+          <p>Our Predictive models uncover trends in opponents and performances in individual games or entire tournaments</p>
         </div>
 
         <div class="service-img">
@@ -101,7 +106,7 @@ Services
 
 <div class="Service-Contact">
 <h1>Let's Get Started!</h1>
-<h2> Contact us for a free demostration.</h2> 
+<h2> Contact us for a free demonstration.</h2> 
 <a href="{{url_for('contactus')}}" class="service-button animate">Contact us</a>
 </div>
 {% endblock %}

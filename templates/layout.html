@@ -17,21 +17,37 @@
   {% block js1 %}{% endblock %}
 </head>
 <body>
-  <!-- Navigation Bar-->
-  <div class = "navbar">
-    <div class = "nav-container">
-      <div class = "nav-items">
-        <a href="{{url_for('home')}}">
-          <img src="{{url_for('static', filename='img/logo.ico')}}" alt="G10 Data Service" class="logo-img">
-        </a>
-        <ul class = "nav-menu">
-            <li><a href="{{url_for('services')}}">Services</a></li>
-            <li><a href="{{url_for('about')}}">About Us</a></li>
-            {% block menu %}{% endblock %}       
-        </ul>
-      </div>
-    </div>
+
+  <header id="header">
+    <nav class="navbar1">
+      <a href="{{url_for('home')}}">
+        <img src="{{url_for('static', filename='img/logo.ico')}}" alt="G10 Data Service" class="logo-img">
+      </a>
+           <ul class="nav-menu">
+               {% block menuhome %}{% endblock %} 
+               <li class="nav-item">
+                   <a href="{{url_for('services')}}" class="nav-link1">SERVICES</a>
+               </li>
+               {% block menu %}{% endblock %} 
+               <li class="nav-item">
+                   <a href="{{url_for('about')}}" class="nav-link1">ABOUT US</a>
+               </li>
+               <li class="nav-item">
+                <a href="{{url_for('contactus')}}" class="nav-link1">CONTACT US</a>
+            </li>
+           </ul>
+           {% block account %}{% endblock %} 
+           <div class="hamburger">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+           </div>
+       </nav>
+   </header>
+   <div class="tophead">
+
   </div>
+
   {% block content %}
   {% endblock %}
   
@@ -58,7 +74,11 @@
       </div>
     </div>
   </footer>
-  <script {% block js2 %}{% endblock %}></script>
+  <script src="{{ url_for('static', filename='js/nav.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/login.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/signup.js')}}"></script>
+  {% block js2 %}{% endblock %}
+  
 </body>
 
 </html>
