@@ -3,11 +3,13 @@ from flask import Flask, request, session, redirect, url_for
 from flask import render_template
 
 app = Flask (__name__)
-app.secret_key = 'G10'
+app.secret_key = '2\xe4r\xef\xc8\x08\x9e\x9f\x86\xf5\x12F\xc1\x85\xc2\x18'
 user = {"username": "Klopp", "password": "Klopp1", "last": "Klopp", "first": "Jürgen", "accounttype": "coach", "team":"Liverpool"}
 
 @app.route("/")
 def home():
+  if not session["name"]:
+      session["logme"] = 'Do Nothing'
   return render_template("index.html")
 
 @app.route("/services/")
@@ -26,22 +28,31 @@ def contactus():
 def chart():
   return render_template("chart.html")
 
+@app.route("/myaccount/")
+def myaccount():
+   if not session["name"]:
+      session["logme"] = 'login to account'
+      return render_template("index.html")
+   else:
+      session["logme"] = 'Do Nothing'
+      useraccount = user['accounttype']
+      userteam = user['team']
+      return redirect(url_for('.account',useraccount=useraccount,userteam=userteam))
 
 @app.route('/login', methods=['POST'])
 def login():
-    error = None
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')   
+        session["name"] = username
         if username != user['username'] and password != user['password']:
-          error = 'Invalid Credentials. Please try again.'
+          session["logme"] = 'Do Nothing'
           return "<h1>Invalid Credentials. Please try again.</h1>" 
         else:
-            session['user'] = user['last'] + ' ' + user['first']
+            session["logme"] = 'Do Nothing'
             useraccount = user['accounttype']
             userteam = user['team']
             return redirect(url_for('.account',useraccount=useraccount,userteam=userteam))
-
 
 @app.route("/account",methods = ['GET','POST'])
 def account():
@@ -82,4 +93,7 @@ def account():
 
     return render_template("account.html",player1=player1,player2=player2, accounttype=accounttype,team=team)
 
-
+@app.route("/logout")
+def logout():
+    session["name"] = None
+    return redirect("/")

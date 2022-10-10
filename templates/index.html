@@ -4,16 +4,28 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css')}}"/>
 {% endblock %}
 {% block js1%}
+<script src="{{ url_for('static', filename='js/login.js')}}"></script>
 {% endblock %}
 {% block title %}
 G10 Home Page
 {% endblock %}
 {% block menu %}
 {% endblock %}
-{% block account %}
-<a href="#" onclick="openLoginForm()" style="width:auto;">
-<img src="{{url_for('static', filename='img/login.png')}}" alt="G10 Login" class="login-img">
-</a>
+{% block login %}
+<div class="dropdown">
+  <img src="{{url_for('static', filename='img/login.png')}}" alt="Login" class="login-img">
+  <div class="dropdown-content">
+    <a href="{{url_for('myaccount')}}" >My Account</a>
+    <a href="#" onclick="openLoginForm()" >Login</a>
+    <a href="{{url_for('logout')}}" >Logout</a>
+  </div>
+</div>
+<script>
+  var check_log = "{{session['logme']}}";
+   if (check_log == 'login to account') 
+      openLoginForm()
+
+</script>
 {% endblock %} 
 {% block content %}
 <section class="main-img">
