@@ -1,14 +1,15 @@
 from crypt import methods
 from flask import Flask, request, session, redirect, url_for
 from flask import render_template
+from datetime import datetime
 
 app = Flask (__name__)
-app.secret_key = '2\xe4r\xef\xc8\x08\x9e\x9f\x86\xf5\x12F\xc1\x85\xc2\x18'
+app.secret_key = '2\xe4r\xef\xc8\x08' + datetime.now().strftime("%H:%M:%S")
 user = {"username": "Klopp", "password": "Klopp1", "last": "Klopp", "first": "Jürgen", "accounttype": "coach", "team":"Liverpool"}
 
 @app.route("/")
 def home():
-  if not session["name"]:
+  if session.get("name") == None:
       session["logme"] = 'Do Nothing'
   return render_template("index.html")
 
@@ -30,7 +31,7 @@ def chart():
 
 @app.route("/myaccount/")
 def myaccount():
-   if not session["name"]:
+   if session.get("name") == None:
       session["logme"] = 'login to account'
       return render_template("index.html")
    else:
@@ -50,6 +51,7 @@ def login():
           return "<h1>Invalid Credentials. Please try again.</h1>" 
         else:
             session["logme"] = 'Do Nothing'
+            session["user"] =  user['first'] + ' ' + user['last']
             useraccount = user['accounttype']
             userteam = user['team']
             return redirect(url_for('.account',useraccount=useraccount,userteam=userteam))
