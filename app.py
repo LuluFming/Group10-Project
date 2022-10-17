@@ -55,9 +55,11 @@ def login():
             useraccount = user['accounttype']
             userteam = user['team']
             return redirect(url_for('.account',useraccount=useraccount,userteam=userteam))
+       
 
 @app.route("/account",methods = ['GET','POST'])
 def account():
+    #Store player data in nested dictionary. Player name will be the key value in the outer dictionary
     nested_dict = { 'Salah': {'name': 'Salah','assists': 23,'shots on target': 15,'goals': 20},
 				    'Ronaldo': {'name': 'Ronaldo','assists': 20,'shots on target': 20,'goals': 23},
                     'Messi': {'name': 'Messi','assists': 35,'shots on target': 19,'goals': 24},
@@ -67,16 +69,14 @@ def account():
     if request.method != 'POST':
       accounttype=request.args['useraccount']
       team=request.args['userteam']
-
-    #player 1 dictionary:
+    #Initialize player 1 with data to display initial data on page.
     player1={
         'name':'Salah',
         'assists': 23,
         'shots on target': 15,
         'goals':20
     }
-
-    #player 2 dictionary:
+    #Initialize player 1 with data to display initial data on page.
     player2={
         'name':'Ronaldo',
         'assists': 20,
@@ -84,7 +84,7 @@ def account():
         'goals':23
     }
 
-
+    #Post Method and retrieve the player selection from the fields and get the selected player data
     if request.method == 'POST':
         requestPlayer1 = request.form.get("player1")
         requestPlayer2 = request.form.get("player2")
@@ -93,6 +93,7 @@ def account():
         accounttype=request.form.get("accounttype")
         team=request.form.get("team")
 
+    #pass the player data
     return render_template("account.html",player1=player1,player2=player2, accounttype=accounttype,team=team)
 
 @app.route("/logout")
