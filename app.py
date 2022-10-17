@@ -2,10 +2,23 @@ from crypt import methods
 from flask import Flask, request, session, redirect, url_for
 from flask import render_template
 from datetime import datetime
+from flask import flash
+from flask import session
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
 
 app = Flask (__name__)
 app.secret_key = '2\xe4r\xef\xc8\x08' + datetime.now().strftime("%H:%M:%S")
 user = {"username": "Klopp", "password": "Klopp1", "last": "Klopp", "first": "Jürgen", "accounttype": "coach", "team":"Liverpool"}
+
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:0318@localHost:5432/flaskapp'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+engine = create_engine('postgresql://postgres:0318@localHost:5432/flaskapp')
+
+
+db = SQLAlchemy(app)
+
 
 @app.route("/")
 def home():
@@ -99,3 +112,35 @@ def account():
 def logout():
     session["name"] = None
     return redirect("/")
+
+
+@app.route("/addtext")
+def addtext():
+    return render_template("index.html")
+
+@app.route('/textadd', methods=['POST'])
+def textadd():
+
+    emailaddress = request.form['emailaddress']
+    
+    import psycopg2
+    conn = psycopg2.connect(
+    database='flaskapp', user= 'postgres', password='0318', host='127.0.0.1', port='5432'
+    )
+    cursor = conn.cursor()
+    
+# Executing the SQL command
+    cursor.execute("INSERT INTO emaillist (emailaddress) VALUES (%s)", [emailaddress])
+    
+    
+# Commit changes in the database
+    conn.commit() 
+
+    return render_template("contactus.html")
+
+if __name__ == '__main__':
+    db.create_all()
+    app.run()
+
+if __name__ == '__main__':
+  app.run(debug=True)

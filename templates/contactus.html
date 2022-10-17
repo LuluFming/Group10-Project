@@ -77,6 +77,17 @@ Contact Us
           </iframe>
         </div>
       </div>
-
   <br>
+
+<div class="newsletter-subscribe mt-5 container">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center newsletter">Subscribe to our Newsletter</h2>
+        </div>
+        <form class="form-inline" action="{{ url_for('textadd')}}" method="post">
+            <div class="form-group"><input class="form-control" type="text" id="emailaddress" name="emailaddress" placeholder="Type your Email..."></div>
+            <div class="form-group"><input class="btn btn-primary" type="submit" value="Subscribe"></div>
+        </form>
+    </div>
+</div>
 {% endblock %}
